@@ -234,7 +234,7 @@ Device Drivers --->
     Generic Driver Options --->
         [*] Automount devtmpfs at /dev, after the kernel mounted the roots
         Firmware loader --->
-            (i915/skl_dmc_ver1_27.bin) Build named firmware blobs into the kernel binary
+            (i915/adlp_dmc_ver2_16.bin i915/adlp_guc_70.bin i915/skl_dmc_ver1_27.bin i915/tgl_huc.bin rtl_bt/rtl8852bu_config.bin rtl_bt/rtl8852bu_fw.bin) Build named firmware blobs into the kernel binary
             (/lib/firmware) Firmware blobs root directory
     Graphics support --->
         <*> Direct Rendering Manager (XFree86 4.1.0 and higher DRI support) --->
@@ -263,6 +263,39 @@ Security options --->
             [*] Harden memory copies by default
             [*] Randomize layout of sensitive kernel structures (Fully randomize structure layout) --->
                 (X) Fully randomize structure layout
+```
+
+```
+### Bluetooth (opcional, mas recomendado)
+
+  Networking support  --->
+   [*] Bluetooth subsystem support  --->
+     [*]  Bluetooth Classic (BR/EDR) features 
+     <M>    RFCOMM protocol support 
+     [*]      RFCOMM TTY support 
+     <M>    BNEP protocol support 
+     [*]      Multicast filter support 
+     [*]      Protocol filter support 
+     <M>    HIDP protocol support 
+     [*]  Bluetooth Low Energy (LE) features
+     [*]  Bluetooth L2CAP Enhanced Credit Flow Control
+     [*]  Enabled LED Triggers
+     [*]  Export Bluetooth internals in debu
+          Bluetooth device drivers --->
+            <M> HCI USB driver
+            [*] Enable USB autosuspend for Bluetooth USB devices by default
+            [*] Enable USB poll_sync for Bluetooth USB devices by default
+            [*] Realtek protocol support
+            <M> HCI UART driver 
+            <M> HCI USB driver 
+            <*> Intel HCI PCIe driver
+     <*> RF switch subsystem support  --->
+ Device Drivers --->
+   Input device support  --->
+     [*] Miscellaneous devices  --->
+       [*] User level driver support 
+   [*] HID bus support  --->
+       [*] User-space I/O driver support for HID subsystem 
 ```
 
 ### Assinar os módulos do kernel
